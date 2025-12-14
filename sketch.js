@@ -8,7 +8,7 @@ let cols, rows;
 let started = false;
 
 // Current sound pack
-let currentPack = 'original';
+let currentPack = 'instruments';
 
 // Original sound samples
 let originalSounds = {};
