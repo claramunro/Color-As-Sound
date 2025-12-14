@@ -19,6 +19,32 @@
       min-height: 100vh;
       font-family: system-ui, sans-serif;
     }
+    #controls {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+    }
+    .sound-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .sound-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .sound-btn.active {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+    }
     #info {
       position: fixed;
       bottom: 20px;
@@ -49,10 +75,19 @@
     #start-btn.hidden {
       display: none;
     }
+    #controls.hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <button id="start-btn">Click to Start</button>
+
+  <div id="controls" class="hidden">
+    <button class="sound-btn active" data-pack="original">Original</button>
+    <button class="sound-btn" data-pack="instruments">Instruments</button>
+  </div>
+
   <div id="info">Each color triggers a different sound</div>
 
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
